@@ -17,10 +17,9 @@ Welcome to the EnchanterBench Mod! This Forge mod for Minecraft, that brings mag
 
 ### Prerequisites
 
-* Minecraft 1.20.4
+* Minecraft (supported mod version)
 
-* Minecraft Forge for 1.20.4 
-
+* Minecraft Forge (supported mod version)
 
 ## Installation
 
