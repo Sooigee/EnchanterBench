@@ -1,7 +1,7 @@
 # EnchanterBench Mod for Minecraft
 
 
-Welcome to the EnchanterBench Mod! This Forge mod for Minecraft 1.20.4 brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
+Welcome to the EnchanterBench Mod! This Forge mod for Minecraft, that brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
 
 ## Features
 
