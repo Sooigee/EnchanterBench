@@ -17,9 +17,9 @@ Welcome to the EnchanterCraft Mod! This Forge mod for Minecraft 1.20.4 brings ma
 
 ### Prerequisites
 
-Minecraft 1.20.4
+* Minecraft 1.20.4
 
-Minecraft Forge for 1.20.4 
+* Minecraft Forge for 1.20.4 
 
 
 ## Installation
