@@ -45,7 +45,7 @@ Go to your main files then config, and double click on enchanterbench.json.
 Here, you can specify the items and their respective enchantments.
 
 ### Example Configuration
-
+```json
 {
   "enchants": {
     "minecraft:diamond_sword": [
@@ -55,7 +55,7 @@ Here, you can specify the items and their respective enchantments.
   },
   "messagesEnabled": false
 }
-
+```
 ## Contact
 
 Sooigee - sebitodd@icloud.com
