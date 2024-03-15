@@ -1,9 +1,9 @@
-#EnchanterCraft Mod for Minecraft Forge 1.20.4
+# EnchanterCraft Mod for Minecraft Forge 1.20.4
 
 
 Welcome to the EnchanterCraft Mod! This Forge mod for Minecraft 1.20.4 brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
 
-##Features
+## Features
 
 1. Automatic Enchantment: Items are enchanted automatically upon crafting, based on predefined configurations.
 
@@ -11,13 +11,13 @@ Welcome to the EnchanterCraft Mod! This Forge mod for Minecraft 1.20.4 brings ma
 
 3. Wide Range of Enchantments: Supports all vanilla Minecraft enchantments and is compatible with many custom enchantments from other mods.
 
-##Getting Started
+## Getting Started
 
-###Prerequisites
+### Prerequisites
 Minecraft 1.20.4
 Minecraft Forge for 1.20.4 
 
-##Installation
+## Installation
 
 Download the EnchanterCraft mod file from the Releases section.
 Place the downloaded .jar file into your Minecraft mods folder.
@@ -26,13 +26,13 @@ macOS/Linux: ~/.minecraft/mods
 Launch Minecraft with the Forge profile selected.
 Dive in and start crafting enchanted items!
 
-##Configuration
+## Configuration
 
 Access the mod's configuration in your game files.
 Go to your main files then config, and double click on enchanterbench.json.
 Here, you can specify the items and their respective enchantments.
 
-#Example Configuration
+# Example Configuration
 
 {
   "enchants": {
@@ -44,7 +44,7 @@ Here, you can specify the items and their respective enchantments.
   "messagesEnabled": false
 }
 
-##Contact
+## Contact
 
 Sooigee - sebitodd@icloud.com
 
