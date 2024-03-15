@@ -1,4 +1,4 @@
-# EnchanterCraft Mod for Minecraft Forge 1.20.4
+# EnchanterCraft Mod for Minecraft 1.20.4 Forge 49.0.31
 
 
 Welcome to the EnchanterCraft Mod! This Forge mod for Minecraft 1.20.4 brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
