@@ -1,46 +1,54 @@
+#EnchanterCraft Mod for Minecraft Forge 1.20.4
 
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
 
-Note also that the patches are built against "un-renamed" MCP source code (aka
-SRG Names) - this means that you will not be able to read them directly against
-normal code.
+Welcome to the EnchanterCraft Mod! This Forge mod for Minecraft 1.20.4 brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
 
-Setup Process:
-==============================
+##Features
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
+1. Automatic Enchantment: Items are enchanted automatically upon crafting, based on predefined configurations.
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: `./gradlew genEclipseRuns`
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run `gradlew eclipse` to generate the project.
+2. Customizable Configurations: Easily specify which items should receive enchantments, and which enchantments they should receive, through a simple config file.
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: `./gradlew genIntellijRuns`
-4. Refresh the Gradle Project in IDEA if required.
+3. Wide Range of Enchantments: Supports all vanilla Minecraft enchantments and is compatible with many custom enchantments from other mods.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can 
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-(this does not affect your code) and then start the process again.
+##Getting Started
 
-Mapping Names:
-=============================
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license, if you do not agree with it you can change your mapping names to other crowdsourced names in your 
-build.gradle. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+###Prerequisites
+Minecraft 1.20.4
+Minecraft Forge for 1.20.4 
 
-Additional Resources: 
-=========================
-Community Documentation: https://docs.minecraftforge.net/en/latest/gettingstarted/
-LexManos' Install Video: https://youtu.be/8VEdtQLuLO0
-Forge Forums: https://forums.minecraftforge.net/
-Forge Discord: https://discord.minecraftforge.net/
+##Installation
+
+Download the EnchanterCraft mod file from the Releases section.
+Place the downloaded .jar file into your Minecraft mods folder.
+Windows: %appdata%\.minecraft\mods
+macOS/Linux: ~/.minecraft/mods
+Launch Minecraft with the Forge profile selected.
+Dive in and start crafting enchanted items!
+
+##Configuration
+
+Access the mod's configuration in your game files.
+Go to your main files then config, and double click on enchanterbench.json.
+Here, you can specify the items and their respective enchantments.
+
+#Example Configuration
+
+{
+  "enchants": {
+    "minecraft:diamond_sword": [
+      "minecraft:sharpness:5",
+      "minecraft:unbreaking:3"
+    ]
+  },
+  "messagesEnabled": false
+}
+
+##Contact
+
+Sooigee - sebitodd@icloud.com
+
+Project Link: https://github.com/Sooigee/EnchanterBench
+
+Acknowledgments
+Minecraft Forge Team, for the powerful modding capabilities.
