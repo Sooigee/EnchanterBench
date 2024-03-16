@@ -30,7 +30,7 @@ public class ConfigManager {
             FileReader reader = new FileReader(CONFIG_PATH.toString());
             Config config = gson.fromJson(reader, type);
             enchantmentsMap = config.enchants;
-            messagesEnabled = config.messagesEnabled; // Load the setting
+            messagesEnabled = config.messagesEnabled; // load the setting
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,7 +57,6 @@ public class ConfigManager {
         return enchantmentsMap.getOrDefault(itemId, null);
     }
 
-    // New method to check if messages are enabled
     public static boolean areMessagesEnabled() {
         return messagesEnabled;
     }
