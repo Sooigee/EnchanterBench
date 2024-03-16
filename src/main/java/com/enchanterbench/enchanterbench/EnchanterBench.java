@@ -21,8 +21,6 @@ import java.util.List;
 import java.util.HashMap;
 
 
-
-// New imports for command registration
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -37,20 +35,17 @@ public class EnchanterBench {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
-		// Load the enchantment configurations
 		ConfigManager.loadConfig();
-		// Register event listeners
 		net.minecraftforge.common.MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@SubscribeEvent
 	public void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
-		Player player = (Player) event.getEntity(); // Directly cast without using instanceof
+		Player player = (Player) event.getEntity();
 
 		ItemStack craftedItem = event.getCrafting();
 		String itemId = ForgeRegistries.ITEMS.getKey(craftedItem.getItem()).toString();
 
-		// Correctly handle the list of enchantment configurations
 		List<String> enchantmentConfigs = ConfigManager.getEnchantmentForItem(itemId);
 		if (enchantmentConfigs != null && !enchantmentConfigs.isEmpty()) {
 			applyEnchantments(craftedItem, enchantmentConfigs, player);
@@ -59,7 +54,7 @@ public class EnchanterBench {
 
 	private static void applyEnchantments(ItemStack item, List<String> enchantmentConfigs, Player player) {
 		Map<Enchantment, Integer> enchantmentsToApply = new HashMap<>();
-		boolean hasEnchantmentFailed = false; // Track if any enchantment application failed
+		boolean hasEnchantmentFailed = false;
 
 		for (String enchantmentConfig : enchantmentConfigs) {
 			String[] parts = enchantmentConfig.split(":");
@@ -67,8 +62,8 @@ public class EnchanterBench {
 				if (ConfigManager.areMessagesEnabled()) {
 					player.displayClientMessage(Component.literal("Failed to apply enchantments due to incorrect format. Expected format: 'modid:enchantment_name:level'"), false);
 				}
-				hasEnchantmentFailed = true; // Mark that an enchantment failed
-				continue; // Skip this enchantment but try the others
+				hasEnchantmentFailed = true;
+				continue;
 			}
 
 			String enchantmentId = parts[1];
@@ -79,8 +74,8 @@ public class EnchanterBench {
 				if (ConfigManager.areMessagesEnabled()) {
 					player.displayClientMessage(Component.literal("Failed to parse enchantment level as a number for " + enchantmentId), false);
 				}
-				hasEnchantmentFailed = true; // Mark that an enchantment failed
-				continue; // Skip this enchantment but try the others
+				hasEnchantmentFailed = true;
+				continue;
 			}
 
 			ResourceLocation resourceLocation = new ResourceLocation(enchantmentId);
@@ -89,8 +84,8 @@ public class EnchanterBench {
 				if (ConfigManager.areMessagesEnabled()) {
 					player.displayClientMessage(Component.literal("Enchantment not found: " + enchantmentId), false);
 				}
-				hasEnchantmentFailed = true; // Mark that an enchantment failed
-				continue; // Skip this enchantment but try the others
+				hasEnchantmentFailed = true;
+				continue;
 			}
 
 			enchantmentsToApply.put(enchantment, level);
@@ -99,29 +94,25 @@ public class EnchanterBench {
 		if (!enchantmentsToApply.isEmpty()) {
 			EnchantmentHelper.setEnchantments(enchantmentsToApply, item);
 			if (ConfigManager.areMessagesEnabled()) {
-				// Only display the success message if messages are enabled
 				player.displayClientMessage(Component.literal("Your item has been enchanted!"), false);
 			}
 		} else if (!hasEnchantmentFailed && ConfigManager.areMessagesEnabled()) {
-			// If no enchantments were applied and there were no failures, inform the player only if messages are enabled
 			player.displayClientMessage(Component.literal("No enchantments were applied."), false);
 		}
 	}
 
 
-	// Register the command to reload config
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public void onServerStarting(RegisterCommandsEvent event) {
 		CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
 
 		dispatcher.register(Commands.literal("enchanterbench")
 				.then(Commands.literal("reload")
-						.requires(cs -> cs.hasPermission(2)) // Permission check
+						.requires(cs -> cs.hasPermission(2))
 						.executes(context -> {
-							ConfigManager.loadConfig(); // Reload the config
+							ConfigManager.loadConfig();
 
 							try {
-								// Assuming context.getSource().getEntity() returns the player or null if not a player
 								Entity entity = context.getSource().getEntity();
 								if (entity instanceof Player) {
 									Player player = (Player) entity;
@@ -130,11 +121,10 @@ public class EnchanterBench {
 									;
 								}
 							} catch (Exception e) {
-								// Log or handle the error gracefully
 								e.printStackTrace();
 							}
 
-							return 1; // Command was executed successfully
+							return 1;
 						})
 				)
 		);
