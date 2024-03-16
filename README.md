@@ -1,7 +1,7 @@
-# EnchanterBench Mod for Minecraft
+# EnchanterBench for Minecraft
 
 
-Welcome to the EnchanterBench Mod! This Forge mod for Minecraft, that brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
+Welcome to the EnchanterBench Mod/Plugin! This Forge mod and Paper plugin for Minecraft, that brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
 
 ## Features
 
@@ -19,11 +19,19 @@ Welcome to the EnchanterBench Mod! This Forge mod for Minecraft, that brings mag
 
 * Minecraft (supported mod version)
 
+#### Forge
+
 * Minecraft Forge (supported mod version)
+
+#### Paper
+
+* Paper Server (supported mod version)
 
 ## Installation
 
-Download the EnchanterBench mod file from the Releases section.
+#### Forge
+
+Download the EnchanterBench mod file from the Releases section under forge.
 
 Place the downloaded .jar file into your Minecraft mods folder.
 
@@ -35,11 +43,19 @@ Launch Minecraft with the Forge profile selected.
 
 Dive in and start crafting enchanted items!
 
+#### Paper
+
+Download the EnchanterBench plugin from the Releases section under Paper.
+
+Place the .jar into your servers plugin folder.
+
+Start up your server and have fun!
+
 ## Configuration
 
-Access the mod's configuration in your game files.
+Access the mod's configuration in your game or server files.
 
-Go to your main files then config, and double click on enchanterbench.json.
+Go to your main files then go under config, and double click on enchanterbench.json.
 
 Here, you can specify the items and their respective enchantments.
 
@@ -55,6 +71,15 @@ Here, you can specify the items and their respective enchantments.
   "messagesEnabled": false
 }
 ```
+
+## Commands
+
+#### Forge
+
+* /enchanterbench reload
+  
+ This command reloads the .json and runs whatever was specified in the new .json.
+
 ## Contact
 
 Sooigee - sebitodd@icloud.com
