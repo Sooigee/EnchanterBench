@@ -86,7 +86,7 @@ Here, you can specify the items and their respective enchantments.
 ```
 enchantments:
   diamond_sword:
-    - enchantment: DAMAGE_ALL
+    - enchantment: SHARPNESS
       level: 10
     - enchantment: KNOCKBACK
       level: 2
