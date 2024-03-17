@@ -80,7 +80,7 @@ Access the plugin's configuration in your server files.
 
 Go to plugins then enchanterbench-plugin and finally, double click on config.yml.
 
-Here, you can specify the items and their respective enchantments (note some enchants will not be vanilla, look at example config).
+Here, you can specify the items and their respective enchantments.
 
 ### Example Configuration
 ```
