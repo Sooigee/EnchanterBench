@@ -1,0 +1,18 @@
+name: enchanterbench-plugin
+version: '1.0'
+main: org.enchanterbench.ebench.EnchanterbenchPlugin
+api-version: '1.20'
+authors: [Sooigee]
+description: This mod lets you enchant items upon crafting.
+
+commands:
+  enchanterbench:
+    description: Reloads the EnchanterBench configuration.
+    usage: /<command> reload
+    permission: enchanterbench.reload
+    aliases: [ebenchreload]
+
+permissions:
+  enchanterbench.reload:
+    description: Allows reloading the EnchanterBench configuration.
+    default: op

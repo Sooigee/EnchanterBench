@@ -1,0 +1,6 @@
+enchantments:
+  diamond_sword:
+    - enchantment: DAMAGE_ALL
+      level: 5
+    - enchantment: KNOCKBACK
+      level: 2
