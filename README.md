@@ -103,6 +103,7 @@ enchantments:
 ## Contact
 
 Sooigee - sooigeee@gmail.com
+Discord - sooigee
 
 Project Link: https://github.com/Sooigee/EnchanterBench
 
