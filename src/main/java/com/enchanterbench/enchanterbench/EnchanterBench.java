@@ -1,6 +1,7 @@
 package com.enchanterbench.enchanterbench;
 
-import net.minecraft.world.entity.Entity;
+import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.Util;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.resources.ResourceLocation;
@@ -13,22 +14,22 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.network.chat.Component;
-
-
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.HashMap;
-
-
-import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.network.chat.ChatType;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 @Mod("enchanterbench")
 public class EnchanterBench {
+	private static final Logger LOGGER = LogManager.getLogger();
 
 	public EnchanterBench() {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -101,7 +102,6 @@ public class EnchanterBench {
 		}
 	}
 
-
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public void onServerStarting(RegisterCommandsEvent event) {
 		CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
@@ -111,18 +111,10 @@ public class EnchanterBench {
 						.requires(cs -> cs.hasPermission(2))
 						.executes(context -> {
 							ConfigManager.loadConfig();
-
-							try {
-								Entity entity = context.getSource().getEntity();
-								if (entity instanceof Player) {
-									Player player = (Player) entity;
-									player.displayClientMessage(Component.literal("EnchanterBench configuration reloaded."), true);
-								} else {
-									;
-								}
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
+							MinecraftServer server = context.getSource().getServer();
+							Component message = Component.literal("EnchanterBench configuration reloaded.");
+							server.getPlayerList().getPlayers().forEach(player -> player.sendSystemMessage(message));
+							LOGGER.info("EnchanterBench configuration reloaded.");
 
 							return 1;
 						})
@@ -130,4 +122,3 @@ public class EnchanterBench {
 		);
 	}
 }
-
