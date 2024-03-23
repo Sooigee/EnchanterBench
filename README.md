@@ -1,4 +1,4 @@
-# EnchanterBench for Minecraft
+# EnchanterBench for Minecraft Paper
 
 
 Welcome to the EnchanterBench Mod/Plugin! This Forge mod and Paper plugin for Minecraft, that brings magic right into your crafting table, allowing you to enchant items as you craft them. With customizable configurations, you can specify exactly which items receive which enchantments, making every crafting session a spellbinding experience.
